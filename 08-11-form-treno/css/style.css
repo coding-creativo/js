@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(137, 156, 243);
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+}
+
+.btn {
+    background-color:  rgb(40, 57, 133);
+    padding: 10px 20px;
+    margin: 0 20px;
+    border: 1px solid blue;
+    color: white;
+    font-size: 22px;
+    border-radius: 10px;
+}
+
+.hidden {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.show {
+    opacity: 1;
+    transition: 0.5s;
+}

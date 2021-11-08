@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom JS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Prezzo del Biglietto</h1>
+        <div class="form-dati">
+            <div class="row">
+                <div class="col">
+                    <label for="name">Nome e Cognome</label>
+                    <input type="text" placeholder="Inserisci il nome" id="name">
+                </div>
+                <div class="col">
+                    <label for="km">km da percorrere</label>
+                    <input type="number" placeholder="Inserisci i kilimetri" id="km" step="0.1">
+                </div>
+                <div class="col">
+                    <label for="eta">Fascia d'età</label>
+                    <select id="eta">
+                        <option value="maggiorenne">Maggiorenne</option>
+                        <option value="minorenne">Minorenne</option>
+                        <option value="over65">Over 65</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn" id="genera">Genera</button>
+                <button class="btn" id="annulla">Annulla</button>
+            </div>
+        </div>
+
+        <div id="biglietto" class="hidden">
+            <h2>Ecco il tuo biglietto</h2>
+            <div class="row">
+                <div class="col">
+                    <span>Nome e Cognome</span>
+                    <span id="nome-cognome"></span>
+                </div>
+                <div class="col">
+                    <span>km da percorrere</span>
+                    <span id="km-da-percorrere"></span>
+                </div>
+                <div class="col">
+                    <span>Fascia d'età</span>
+                    <span id="facia-eta"></span>
+                </div>
+                <div class="col">
+                    <span>Prezzo totale</span>
+                    <span id="prezzo-finale"></span>
+                     <!-- qui deve comparire quello che l'utente -->
+                </div>
+            </div>
+        </div>
+
+    </div>   
+
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
