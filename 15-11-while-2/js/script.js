@@ -14,14 +14,21 @@ const numbers = [];
 
 // con il while
 
-let i = 0;
+// let i = 0;
 
-while(i < 5){
+// while(i < 5){
+//     const number = Math.floor(Math.random() * 10) + 1;
+//     numbers.push(number);
+//     i++;  
+// }
+
+// console.log(numbers);
+
+// usare il while senza contatore
+
+while (numbers.length < 5){
     const number = Math.floor(Math.random() * 10) + 1;
     numbers.push(number);
-    i++;  
 }
 
 console.log(numbers);
-
-// usare il while senza contatore
