@@ -35,15 +35,15 @@ for(let i = 0; i < 64; i++){
     const divEl = addSquare();
     container.appendChild(divEl);
 
-    // divEl.addEventListener('click', function() {
-    //     console.log(this);
-    //     this.classList.add('clicked-true');
-    // });
-
-    divEl.addEventListener('click', () => {
+    divEl.addEventListener('click', function() {
         console.log(this);
         this.classList.add('clicked-true');
-   });
+    });
+
+//     divEl.addEventListener('click', () => {
+//         console.log(this);
+//         this.classList.add('clicked-true');
+//    });
 
 
 }
