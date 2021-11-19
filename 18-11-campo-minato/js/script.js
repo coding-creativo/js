@@ -3,7 +3,9 @@ document.getElementById('play').addEventListener('click', function(){
 });
 
 function play() {
-    document.querySelector('.container-square').innerHTML = '';
+    const container = document.querySelector('.container-square'); 
+    container.innerHTML = '';
+    container.classList.remove('disabled');
 
     const levelSelected = parseInt(document.getElementById('level').value);
     // console.log(levelSelected);
@@ -27,9 +29,14 @@ function play() {
             cellsNumber = 49;
     }
 
+    cellForSide = Math.sqrt(cellsNumber);
+    // console.log(cellForSide);
 
     const bombs = generateBoms();
     console.log(bombs);
+
+    const arrayAttemps = [];
+    const attemps = cellsNumber - bombsNumber;
 
     function generateBoms() {
         const arrayBombs = [];
@@ -40,6 +47,9 @@ function play() {
                 arrayBombs.push(numeroRandom);
             }
         }
+
+        // ordiniamolo
+        arrayBombs.sort(function(a, b){return a-b});
         
         return arrayBombs;
 
@@ -47,30 +57,41 @@ function play() {
 
     function getRndInteger(min, max) {
         return Math.floor(Math.random() * (max - min + 1) ) + min;
-      }
-
-
-    cellForSide = Math.sqrt(cellsNumber);
-    // console.log(cellForSide);
+    }
 
     generatePlayground();
 
     function generatePlayground() {
 
-        
         const box = document.querySelector('.container-square');
 
         for(let i = 1; i<= cellsNumber; i++){
             const grid = createItem(i);
 
             grid.addEventListener('click', function() {
-                this.classList.add('selected');
+                if(bombs.includes(i)){
+                    this.classList.add('red');
+                    endGame();
+                } else {
+                    this.classList.add('selected');
+                    arrayAttemps.push(i);
+                }
+
+                if(attemps === arrayAttemps.length){
+                    console.log('hai vinto');
+                }
+                
             });
 
             // console.log(grid);
             box.appendChild(grid);
         }
         // console.log(size);        
+    }
+
+    function endGame(){
+        alert('gioco finito! Numero di tentativi ' + arrayAttemps.length);
+        container.classList.add('disabled');
     }
 
     function createItem(num) {

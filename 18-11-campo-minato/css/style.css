@@ -48,7 +48,14 @@ main {
     justify-content: center;
     align-items: center;
 }
-
 .selected {
     background-color: yellow;
+}
+
+.red {
+    background-color: red;
+}
+
+.disabled {
+    pointer-events: none;
 }
